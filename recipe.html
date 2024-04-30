@@ -13,15 +13,47 @@
         object-fit: cover; /* Maintain aspect ratio and crop if necessary */
         border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
       }
+
+      /* Center pagination */
+      .footer {
+        text-align: center;
+      }
+
+      .pagination {
+        display: inline-block;
+      }
+
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border: 1px solid #ddd;
+      }
+
+      .pagination a.active {
+        background-color: #4caf50;
+        color: white;
+        border: 1px solid #4caf50;
+      }
+
+      .pagination a:hover:not(.active) {
+        background-color: #ddd;
+      }
     </style>
   </head>
   <body>
     <div class="banner">
       <div class="navbar">
         <img src="pics/logo.png" class="logo" alt="Pnoy Dishcovery Logo" />
-        <form class="search-bar">
-          <!-- Adjust action and method as needed -->
-          <input type="text" name="search_query" placeholder="Search..." />
+        <form class="search-bar" onsubmit="searchRecipe(event)">
+          <input
+            type="text"
+            id="searchQuery"
+            name="search_query"
+            placeholder="Search..."
+          />
           <button type="submit">
             <ion-icon name="search-outline"></ion-icon>
           </button>
@@ -36,7 +68,7 @@
     </div>
 
     <!-- Add your recipe container here -->
-    <div class="recipes-container">
+    <div class="recipes-container" id="recipesContainer">
       <!-- Recipe cards -->
       <div class="recipe-card">
         <img src="pics/sinigang.jpg" alt="Sinigang" />
@@ -46,7 +78,6 @@
           cooked with pork, beef, shrimp, or fish.
         </p>
       </div>
-
       <div class="recipe-card">
         <img src="pics/adobo.jpg" alt="Adobo" />
         <h2 class="recipe-title">Adobo</h2>
@@ -56,7 +87,6 @@
           reduced marinade.
         </p>
       </div>
-
       <div class="recipe-card">
         <img src="pics/karekare.jpg" alt="Kare-Kare" />
         <h2 class="recipe-title">Kare-Kare</h2>
@@ -66,7 +96,6 @@
           banana flower, and string beans.
         </p>
       </div>
-
       <div class="recipe-card">
         <img src="pics/lumpia.jpg" alt="Lumpia" />
         <h2 class="recipe-title">Lumpiang Shanghai</h2>
@@ -76,10 +105,50 @@
           deep-fried until crispy.
         </p>
       </div>
-
       <!-- Add more recipe cards with images as needed -->
     </div>
 
+    <!-- Pagination -->
+    <div class="footer">
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function searchRecipe(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        const searchQuery = document
+          .getElementById("searchQuery")
+          .value.toLowerCase();
+        const recipeCards = document.querySelectorAll(".recipe-card");
+
+        recipeCards.forEach((card) => {
+          const title = card
+            .querySelector(".recipe-title")
+            .textContent.toLowerCase();
+          const description = card
+            .querySelector(".recipe-description")
+            .textContent.toLowerCase();
+
+          if (
+            title.includes(searchQuery) ||
+            description.includes(searchQuery)
+          ) {
+            card.style.display = "block"; // Show the card if it matches the search query
+          } else {
+            card.style.display = "none"; // Hide the card if it doesn't match the search query
+          }
+        });
+      }
+    </script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -88,6 +157,5 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="script.js"></script>
   </body>
 </html>
