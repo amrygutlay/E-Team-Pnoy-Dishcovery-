@@ -6,6 +6,41 @@
     <title>Pnoy Dishcovery - Recipes</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+            /* Additional CSS to adjust image size */
+            .recipe-card img {
+        width: 250px;
+        height: 200px;
+        object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+        border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
+      }
+
+      /* Center pagination */
+      .footer {
+        text-align: center;
+      }
+
+      .pagination {
+        display: inline-block;
+      }
+
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border: 1px solid #ddd;
+      }
+
+      .pagination a.active {
+        background-color: #4caf50;
+        color: white;
+        border: 1px solid #4caf50;
+      }
+
+      .pagination a:hover:not(.active) {
+        background-color: #ddd;
+      }
         /* Additional CSS to adjust image size */
         .recipe-card img {
             width: 250px;
@@ -123,7 +158,188 @@
             <h2 class="recipe-title">Lumpiang Shanghai</h2>
             <p class="recipe-description">Filipino-style spring rolls filled with ground pork, minced onions, carrots, and spices, wrapped in thin spring roll wrappers and deep-fried until crispy.</p>
         </div>
-        <!-- Add more recipe cards with images as needed -->
+        <!-- Recipe card for Leche Flan -->
+<div class="recipe-card" onclick="showRecipeDetails('Leche Flan')">
+  <img src="pics/leche_flan.jpg" alt="Leche Flan" />
+  <h2 class="recipe-title">Leche Flan</h2>
+  <p class="recipe-description">
+    Leche Flan is a traditional Filipino dessert made with eggs, condensed
+    milk, and caramelized sugar. It's known for its smooth texture and
+    rich flavor.
+  </p>
+</div>
+
+<!-- Recipe card for Halo-Halo -->
+<div class="recipe-card" onclick="showRecipeDetails('Halo-Halo')">
+  <img src="pics/halo_halo.jpg" alt="Halo-Halo" />
+  <h2 class="recipe-title">Halo-Halo</h2>
+  <p class="recipe-description">
+    Halo-Halo is a popular Filipino dessert that consists of a mixture of
+    shaved ice and various sweet ingredients like beans, fruits, and
+    gelatin, topped with evaporated milk and ice cream.
+  </p>
+</div>
+
+<!-- Recipe card for Biko -->
+<div class="recipe-card" onclick="showRecipeDetails('Biko')">
+  <img src="pics/biko.jpg" alt="Biko" />
+  <h2 class="recipe-title">Biko</h2>
+  <p class="recipe-description">
+    Biko is a Filipino rice cake made from glutinous rice, coconut milk,
+    and brown sugar. It's often served during special occasions and
+    celebrations.
+  </p>
+</div>
+
+<!-- Recipe card for Buko Salad -->
+<div class="recipe-card" onclick="showRecipeDetails('Buko Salad')">
+  <img src="pics/buko_salad.jpg" alt="Buko Salad" />
+  <h2 class="recipe-title">Buko Salad</h2>
+  <p class="recipe-description">
+    Buko Salad is a Filipino fruit salad made with young coconut, mixed
+    fruits, cream, and condensed milk. It's a refreshing and sweet dessert
+    commonly served during gatherings.
+  </p>
+</div>
+
+<!-- Recipe card for Pinakbet -->
+<div class="recipe-card" onclick="showRecipeDetails('Pinakbet')">
+  <img src="pics/pinakbet.jpg" alt="Pinakbet" />
+  <h2 class="recipe-title">Pinakbet</h2>
+  <p class="recipe-description">
+    Pinakbet is a Filipino vegetable dish made from mixed vegetables such
+    as squash, eggplant, okra, string beans, and bitter melon, sautéed in
+    shrimp paste or fermented fish sauce.
+  </p>
+</div>
+
+<!-- Recipe card for Sisig -->
+<div class="recipe-card" onclick="showRecipeDetails('Sisig')">
+  <img src="pics/sisig.jpg" alt="Sisig" />
+  <h2 class="recipe-title">Sisig</h2>
+  <p class="recipe-description">
+    Sisig is a Filipino dish made from parts of pig's head and liver,
+    seasoned with calamansi juice, onions, and chili peppers. It's often
+    served on a sizzling plate and garnished with raw egg.
+  </p>
+</div>
+
+<!-- Recipe card for Kutsinta -->
+<div class="recipe-card" onclick="showRecipeDetails('Kutsinta')">
+  <img src="pics/kutsinta.jpg" alt="Kutsinta" />
+  <h2 class="recipe-title">Kutsinta</h2>
+  <p class="recipe-description">
+    Kutsinta is a Filipino steamed rice cake made from rice flour, brown
+    sugar, and lye water. It has a jelly-like texture and is usually
+    served with grated coconut.
+  </p>
+</div>
+
+<!-- Recipe card for Cassava Cake -->
+<div class="recipe-card" onclick="showRecipeDetails('Cassava Cake')">
+  <img src="pics/cassava_cake.jpg" alt="Cassava Cake" />
+  <h2 class="recipe-title">Cassava Cake</h2>
+  <p class="recipe-description">
+    Cassava Cake is a traditional Filipino dessert made from grated
+    cassava, coconut milk, eggs, and condensed milk. It's baked until set
+    and topped with a creamy custard layer.
+  </p>
+</div>      
+      <!-- Add more recipe cards with images as needed -->
+      <!-- Recipe card for Leche Flan -->
+      <div class="recipe-card">
+        <img src="pics/leche_flan.jpg" alt="Leche Flan" />
+        <h2 class="recipe-title">Leche Flan</h2>
+        <p class="recipe-description">
+          Leche Flan is a traditional Filipino dessert made with eggs, condensed
+          milk, and caramelized sugar. It's known for its smooth texture and
+          rich flavor.
+        </p>
+      </div>
+      <!-- Recipe card for Halo-Halo -->
+      <div class="recipe-card">
+        <img src="pics/halo_halo.jpg" alt="Halo-Halo" />
+        <h2 class="recipe-title">Halo-Halo</h2>
+        <p class="recipe-description">
+          Halo-Halo is a popular Filipino dessert that consists of a mixture of
+          shaved ice and various sweet ingredients like beans, fruits, and
+          gelatin, topped with evaporated milk and ice cream.
+        </p>
+      </div>
+      <!-- Recipe card for Biko -->
+      <div class="recipe-card">
+        <img src="pics/biko.jpg" alt="Biko" />
+        <h2 class="recipe-title">Biko</h2>
+        <p class="recipe-description">
+          Biko is a Filipino rice cake made from glutinous rice, coconut milk,
+          and brown sugar. It's often served during special occasions and
+          celebrations.
+        </p>
+      </div>
+
+      <!-- Recipe card for Buko Salad -->
+      <div class="recipe-card">
+        <img src="pics/buko_salad.jpg" alt="Buko Salad" />
+        <h2 class="recipe-title">Buko Salad</h2>
+        <p class="recipe-description">
+          Buko Salad is a Filipino fruit salad made with young coconut, mixed
+          fruits, cream, and condensed milk. It's a refreshing and sweet dessert
+          commonly served during gatherings.
+        </p>
+      </div>
+      <!-- Recipe card for Pinakbet -->
+      <div class="recipe-card">
+        <img src="pics/pinakbet.jpg" alt="Pinakbet" />
+        <h2 class="recipe-title">Pinakbet</h2>
+        <p class="recipe-description">
+          Pinakbet is a Filipino vegetable dish made from mixed vegetables such
+          as squash, eggplant, okra, string beans, and bitter melon, sautéed in
+          shrimp paste or fermented fish sauce.
+        </p>
+      </div>
+
+      <!-- Recipe card for Sisig -->
+      <div class="recipe-card">
+        <img src="pics/sisig.jpg" alt="Sisig" />
+        <h2 class="recipe-title">Sisig</h2>
+        <p class="recipe-description">
+          Sisig is a Filipino dish made from parts of pig's head and liver,
+          seasoned with calamansi juice, onions, and chili peppers. It's often
+          served on a sizzling plate and garnished with raw egg.
+        </p>
+      </div>
+
+      <!-- Recipe card for Kutsinta -->
+      <div class="recipe-card">
+        <img src="pics/kutsinta.jpg" alt="Kutsinta" />
+        <h2 class="recipe-title">Kutsinta</h2>
+        <p class="recipe-description">
+          Kutsinta is a Filipino steamed rice cake made from rice flour, brown
+          sugar, and lye water. It has a jelly-like texture and is usually
+          served with grated coconut.
+        </p>
+      </div>
+
+      <!-- Recipe card for Cassava Cake -->
+      <div class="recipe-card">
+        <img src="pics/cassava_cake.jpg" alt="Cassava Cake" />
+        <h2 class="recipe-title">Cassava Cake</h2>
+        <p class="recipe-description">
+          Cassava Cake is a traditional Filipino dessert made from grated
+          cassava, coconut milk, eggs, and condensed milk. It's baked until set
+          and topped with a creamy custard layer.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-container">
+      <div class="pagination">
+        <button onclick="changePage(1)" class="active">1</button>
+        <button onclick="changePage(2)">2</button>
+        <button onclick="changePage(3)">3</button>
+        <!-- Add more buttons for additional pages -->
+      </div>
     </div>
 
     <!-- Add Recipe Form Popup -->
@@ -311,7 +527,72 @@
                     method: ["Step 1: Mix ground pork, onions, carrots, and spices", "Step 2: Wrap mixture in spring roll wrappers", "Step 3: Deep-fry until crispy", "Step 4: Serve hot"],
                     timeToCook: "45 minutes",
                     nutritionalValue: "Calories: 200, Fat: 8g, Carbs: 15g, Protein: 10g"
-                }
+                },
+                "Leche Flan": {
+    title: "Leche Flan",
+    description: "Leche Flan is a traditional Filipino dessert made with eggs, condensed milk, and caramelized sugar. It's known for its smooth texture and rich flavor.",
+    ingredients: ["Eggs", "Condensed milk", "Sugar"],
+    method: ["Step 1: Caramelize sugar in a mold", "Step 2: Mix eggs and condensed milk", "Step 3: Pour mixture into the mold", "Step 4: Steam until set", "Step 5: Chill and serve inverted"],
+    timeToCook: "1 hour",
+    nutritionalValue: "Calories: 200, Fat: 8g, Carbs: 25g, Protein: 6g"
+},
+"Halo-Halo": {
+    title: "Halo-Halo",
+    description: "Halo-Halo is a popular Filipino dessert that consists of a mixture of shaved ice and various sweet ingredients like beans, fruits, and gelatin, topped with evaporated milk and ice cream.",
+    ingredients: ["Shaved ice", "Beans", "Fruits", "Gelatin", "Evaporated milk", "Ice cream"],
+    method: ["Step 1: Fill a glass with shaved ice", "Step 2: Add beans, fruits, and gelatin on top", "Step 3: Pour evaporated milk over the mixture", "Step 4: Top with a scoop of ice cream"],
+    timeToPrepare: "15 minutes",
+    nutritionalValue: "Calories: 300, Fat: 10g, Carbs: 45g, Protein: 5g"
+},
+"Biko": {
+    title: "Biko",
+    description: "Biko is a Filipino rice cake made from glutinous rice, coconut milk, and brown sugar. It's often served during special occasions and celebrations.",
+    ingredients: ["Glutinous rice", "Coconut milk", "Brown sugar"],
+    method: ["Step 1: Cook glutinous rice with coconut milk and brown sugar until sticky", "Step 2: Spread mixture in a pan and flatten", "Step 3: Bake until golden brown", "Step 4: Cool and slice before serving"],
+    timeToCook: "1 hour",
+    nutritionalValue: "Calories: 250, Fat: 5g, Carbs: 40g, Protein: 3g"
+},
+"Buko Salad": {
+    title: "Buko Salad",
+    description: "Buko Salad is a Filipino fruit salad made with young coconut, mixed fruits, cream, and condensed milk. It's a refreshing and sweet dessert commonly served during gatherings.",
+    ingredients: ["Young coconut", "Mixed fruits", "Cream", "Condensed milk"],
+    method: ["Step 1: Mix young coconut, mixed fruits, cream, and condensed milk in a bowl", "Step 2: Chill in the refrigerator before serving"],
+    timeToPrepare: "30 minutes",
+    nutritionalValue: "Calories: 180, Fat: 5g, Carbs: 30g, Protein: 2g"
+},
+"Pinakbet": {
+    title: "Pinakbet",
+    description: "Pinakbet is a Filipino vegetable dish made from mixed vegetables such as squash, eggplant, okra, string beans, and bitter melon, sautéed in shrimp paste or fermented fish sauce.",
+    ingredients: ["Squash", "Eggplant", "Okra", "String beans", "Bitter melon", "Shrimp paste"],
+    method: ["Step 1: Sauté mixed vegetables in shrimp paste or fermented fish sauce until cooked", "Step 2: Serve hot"],
+    timeToCook: "30 minutes",
+    nutritionalValue: "Calories: 150, Fat: 3g, Carbs: 20g, Protein: 5g"
+},
+"Sisig": {
+    title: "Sisig",
+    description: "Sisig is a Filipino dish made from parts of pig's head and liver, seasoned with calamansi juice, onions, and chili peppers. It's often served on a sizzling plate and garnished with raw egg.",
+    ingredients: ["Pig's head", "Liver", "Calamansi juice", "Onions", "Chili peppers", "Raw egg"],
+    method: ["Step 1: Boil pig's head and liver until tender", "Step 2: Grill or fry until crispy", "Step 3: Mix with calamansi juice, onions, and chili peppers", "Step 4: Serve on a sizzling plate, garnished with raw egg"],
+    timeToCook: "2 hours",
+    nutritionalValue: "Calories: 400, Fat: 20g, Carbs: 15g, Protein: 30g"
+},
+"Kutsinta": {
+    title: "Kutsinta",
+    description: "Kutsinta is a Filipino steamed rice cake made from rice flour, brown sugar, and lye water. It has a jelly-like texture and is usually served with grated coconut.",
+    ingredients: ["Rice flour", "Brown sugar", "Lye water"],
+    method: ["Step 1: Mix rice flour, brown sugar, and lye water until smooth", "Step 2: Pour mixture into molds", "Step 3: Steam until set", "Step 4: Serve with grated coconut"],
+    timeToCook: "45 minutes",
+    nutritionalValue: "Calories: 150, Fat: 2g, Carbs: 30g, Protein: 1g"
+},
+"Cassava Cake": {
+    title: "Cassava Cake",
+    description: "Cassava Cake is a traditional Filipino dessert made from grated cassava, coconut milk, eggs, and condensed milk. It's baked until set and topped with a creamy custard layer.",
+    ingredients: ["Grated cassava", "Coconut milk", "Eggs", "Condensed milk"],
+    method: ["Step 1: Mix grated cassava, coconut milk, eggs, and condensed milk", "Step 2: Pour mixture into a baking dish", "Step 3: Bake until set", "Step 4: Top with a creamy custard layer and bake again until golden brown"],
+    timeToCook: "1 hour 30 minutes",
+    nutritionalValue: "Calories: 280, Fat: 10g, Carbs: 40g, Protein: 5g"
+}
+                
             };
             return recipes[recipeTitle];
         }
