@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pnoy Dishcovery - Recipes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-            /* Additional CSS to adjust image size */
-            .recipe-card img {
+      /* Additional CSS to adjust image size */
+      .recipe-card img {
         width: 250px;
         height: 200px;
         object-fit: cover; /* Maintain aspect ratio and crop if necessary */
@@ -41,22 +41,12 @@
       .pagination a:hover:not(.active) {
         background-color: #ddd;
       }
-        /* Additional CSS to adjust image size */
-        .recipe-card img {
+              /* Additional CSS to adjust image size */
+              .recipe-card img {
             width: 250px;
             height: 200px;
             object-fit: cover; /* Maintain aspect ratio and crop if necessary */
             border-radius: 8px 8px 0 0; /* Add border radius to match card corners */
-        }
-        .add-recipe-button {
-            margin-top: 20px;
-            margin-left: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
         }
         .popup-overlay {
             position: fixed;
@@ -113,138 +103,69 @@
             margin-left: 20px;
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="banner">
-        <div class="navbar">
-            <img src="pics/logo.png" class="logo" alt="Pnoy Dishcovery Logo">
-            <form class="search-bar" onsubmit="searchRecipe(event)">
-                <input type="text" id="searchQuery" name="search_query" placeholder="Search...">
-                <button type="submit">
-                    <ion-icon name="search-outline"></ion-icon>
-                </button>
-            </form>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipe.html">Recipes</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Log in</a></li>
-            </ul>
-            <!-- Add Recipe Button -->
-            <button class="add-recipe-button" onclick="showAddRecipeForm()">Add Recipe</button>
-        </div>
+      <div class="navbar">
+        <img src="pics/logo.png" class="logo" alt="Pnoy Dishcovery Logo" />
+        <form class="search-bar" onsubmit="searchRecipe(event)">
+          <input
+            type="text"
+            id="searchQuery"
+            name="search_query"
+            placeholder="Search..."
+          />
+          <button type="submit">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </form>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipe.html">Recipes</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="login.html">Log in</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Add your recipe container here -->
     <div class="recipes-container" id="recipesContainer">
-        <!-- Recipe cards -->
-        <div class="recipe-card" onclick="showRecipeDetails('Sinigang')">
-            <img src="pics/sinigang.jpg" alt="Sinigang">
-            <h2 class="recipe-title">Sinigang</h2>
-            <p class="recipe-description">A sour Filipino soup typically associated with tamarind. It is often cooked with pork, beef, shrimp, or fish.</p>
-        </div>
-        <div class="recipe-card" onclick="showRecipeDetails('Adobo')">
-            <img src="pics/adobo.jpg" alt="Adobo">
-            <h2 class="recipe-title">Adobo</h2>
-            <p class="recipe-description">A Filipino chicken dish marinated in soy sauce, vinegar, and garlic, and then browned in oil, simmered until tender, and served with the reduced marinade.</p>
-        </div>
-        <div class="recipe-card" onclick="showRecipeDetails('Kare-Kare')">
-            <img src="pics/karekare.jpg" alt="Kare-Kare">
-            <h2 class="recipe-title">Kare-Kare</h2>
-            <p class="recipe-description">A Filipino stew characterized by its rich peanut sauce. It is typically made with oxtail, tripe, and vegetables such as eggplant, banana flower, and string beans.</p>
-        </div>
-        <div class="recipe-card" onclick="showRecipeDetails('Lumpiang Shanghai')">
-            <img src="pics/lumpia.jpg" alt="Lumpia">
-            <h2 class="recipe-title">Lumpiang Shanghai</h2>
-            <p class="recipe-description">Filipino-style spring rolls filled with ground pork, minced onions, carrots, and spices, wrapped in thin spring roll wrappers and deep-fried until crispy.</p>
-        </div>
-        <!-- Recipe card for Leche Flan -->
-<div class="recipe-card" onclick="showRecipeDetails('Leche Flan')">
-  <img src="pics/leche_flan.jpg" alt="Leche Flan" />
-  <h2 class="recipe-title">Leche Flan</h2>
-  <p class="recipe-description">
-    Leche Flan is a traditional Filipino dessert made with eggs, condensed
-    milk, and caramelized sugar. It's known for its smooth texture and
-    rich flavor.
-  </p>
-</div>
-
-<!-- Recipe card for Halo-Halo -->
-<div class="recipe-card" onclick="showRecipeDetails('Halo-Halo')">
-  <img src="pics/halo_halo.jpg" alt="Halo-Halo" />
-  <h2 class="recipe-title">Halo-Halo</h2>
-  <p class="recipe-description">
-    Halo-Halo is a popular Filipino dessert that consists of a mixture of
-    shaved ice and various sweet ingredients like beans, fruits, and
-    gelatin, topped with evaporated milk and ice cream.
-  </p>
-</div>
-
-<!-- Recipe card for Biko -->
-<div class="recipe-card" onclick="showRecipeDetails('Biko')">
-  <img src="pics/biko.jpg" alt="Biko" />
-  <h2 class="recipe-title">Biko</h2>
-  <p class="recipe-description">
-    Biko is a Filipino rice cake made from glutinous rice, coconut milk,
-    and brown sugar. It's often served during special occasions and
-    celebrations.
-  </p>
-</div>
-
-<!-- Recipe card for Buko Salad -->
-<div class="recipe-card" onclick="showRecipeDetails('Buko Salad')">
-  <img src="pics/buko_salad.jpg" alt="Buko Salad" />
-  <h2 class="recipe-title">Buko Salad</h2>
-  <p class="recipe-description">
-    Buko Salad is a Filipino fruit salad made with young coconut, mixed
-    fruits, cream, and condensed milk. It's a refreshing and sweet dessert
-    commonly served during gatherings.
-  </p>
-</div>
-
-<!-- Recipe card for Pinakbet -->
-<div class="recipe-card" onclick="showRecipeDetails('Pinakbet')">
-  <img src="pics/pinakbet.jpg" alt="Pinakbet" />
-  <h2 class="recipe-title">Pinakbet</h2>
-  <p class="recipe-description">
-    Pinakbet is a Filipino vegetable dish made from mixed vegetables such
-    as squash, eggplant, okra, string beans, and bitter melon, sautéed in
-    shrimp paste or fermented fish sauce.
-  </p>
-</div>
-
-<!-- Recipe card for Sisig -->
-<div class="recipe-card" onclick="showRecipeDetails('Sisig')">
-  <img src="pics/sisig.jpg" alt="Sisig" />
-  <h2 class="recipe-title">Sisig</h2>
-  <p class="recipe-description">
-    Sisig is a Filipino dish made from parts of pig's head and liver,
-    seasoned with calamansi juice, onions, and chili peppers. It's often
-    served on a sizzling plate and garnished with raw egg.
-  </p>
-</div>
-
-<!-- Recipe card for Kutsinta -->
-<div class="recipe-card" onclick="showRecipeDetails('Kutsinta')">
-  <img src="pics/kutsinta.jpg" alt="Kutsinta" />
-  <h2 class="recipe-title">Kutsinta</h2>
-  <p class="recipe-description">
-    Kutsinta is a Filipino steamed rice cake made from rice flour, brown
-    sugar, and lye water. It has a jelly-like texture and is usually
-    served with grated coconut.
-  </p>
-</div>
-
-<!-- Recipe card for Cassava Cake -->
-<div class="recipe-card" onclick="showRecipeDetails('Cassava Cake')">
-  <img src="pics/cassava_cake.jpg" alt="Cassava Cake" />
-  <h2 class="recipe-title">Cassava Cake</h2>
-  <p class="recipe-description">
-    Cassava Cake is a traditional Filipino dessert made from grated
-    cassava, coconut milk, eggs, and condensed milk. It's baked until set
-    and topped with a creamy custard layer.
-  </p>
-</div>      
+      <!-- Recipe cards -->
+      <div class="recipe-card">
+        <img src="pics/sinigang.jpg" alt="Sinigang" />
+        <h2 class="recipe-title">Sinigang</h2>
+        <p class="recipe-description">
+          A sour Filipino soup typically associated with tamarind. It is often
+          cooked with pork, beef, shrimp, or fish.
+        </p>
+      </div>
+      <div class="recipe-card">
+        <img src="pics/adobo.jpg" alt="Adobo" />
+        <h2 class="recipe-title">Adobo</h2>
+        <p class="recipe-description">
+          A Filipino chicken dish marinated in soy sauce, vinegar, and garlic,
+          and then browned in oil, simmered until tender, and served with the
+          reduced marinade.
+        </p>
+      </div>
+      <div class="recipe-card">
+        <img src="pics/karekare.jpg" alt="Kare-Kare" />
+        <h2 class="recipe-title">Kare-Kare</h2>
+        <p class="recipe-description">
+          A Filipino stew characterized by its rich peanut sauce. It is
+          typically made with oxtail, tripe, and vegetables such as eggplant,
+          banana flower, and string beans.
+        </p>
+      </div>
+      <div class="recipe-card">
+        <img src="pics/lumpia.jpg" alt="Lumpia" />
+        <h2 class="recipe-title">Lumpiang Shanghai</h2>
+        <p class="recipe-description">
+          Filipino-style spring rolls filled with ground pork, minced onions,
+          carrots, and spices, wrapped in thin spring roll wrappers and
+          deep-fried until crispy.
+        </p>
+      </div>
       <!-- Add more recipe cards with images as needed -->
       <!-- Recipe card for Leche Flan -->
       <div class="recipe-card">
@@ -256,6 +177,7 @@
           rich flavor.
         </p>
       </div>
+
       <!-- Recipe card for Halo-Halo -->
       <div class="recipe-card">
         <img src="pics/halo_halo.jpg" alt="Halo-Halo" />
@@ -266,6 +188,7 @@
           gelatin, topped with evaporated milk and ice cream.
         </p>
       </div>
+
       <!-- Recipe card for Biko -->
       <div class="recipe-card">
         <img src="pics/biko.jpg" alt="Biko" />
@@ -331,7 +254,188 @@
         </p>
       </div>
     </div>
+        <!-- Recipe cards -->
+        <div class="recipe-card" onclick="showRecipeDetails('Sinigang')">
+          <img src="pics/sinigang.jpg" alt="Sinigang">
+          <h2 class="recipe-title">Sinigang</h2>
+          <p class="recipe-description">A sour Filipino soup typically associated with tamarind. It is often cooked with pork, beef, shrimp, or fish.</p>
+      </div>
+      <div class="recipe-card" onclick="showRecipeDetails('Adobo')">
+          <img src="pics/adobo.jpg" alt="Adobo">
+          <h2 class="recipe-title">Adobo</h2>
+          <p class="recipe-description">A Filipino chicken dish marinated in soy sauce, vinegar, and garlic, and then browned in oil, simmered until tender, and served with the reduced marinade.</p>
+      </div>
+      <div class="recipe-card" onclick="showRecipeDetails('Kare-Kare')">
+          <img src="pics/karekare.jpg" alt="Kare-Kare">
+          <h2 class="recipe-title">Kare-Kare</h2>
+          <p class="recipe-description">A Filipino stew characterized by its rich peanut sauce. It is typically made with oxtail, tripe, and vegetables such as eggplant, banana flower, and string beans.</p>
+      </div>
+      <div class="recipe-card" onclick="showRecipeDetails('Lumpiang Shanghai')">
+          <img src="pics/lumpia.jpg" alt="Lumpia">
+          <h2 class="recipe-title">Lumpiang Shanghai</h2>
+          <p class="recipe-description">Filipino-style spring rolls filled with ground pork, minced onions, carrots, and spices, wrapped in thin spring roll wrappers and deep-fried until crispy.</p>
+      </div>
+      <!-- Recipe card for Leche Flan -->
+<div class="recipe-card" onclick="showRecipeDetails('Leche Flan')">
+<img src="pics/leche_flan.jpg" alt="Leche Flan" />
+<h2 class="recipe-title">Leche Flan</h2>
+<p class="recipe-description">
+  Leche Flan is a traditional Filipino dessert made with eggs, condensed
+  milk, and caramelized sugar. It's known for its smooth texture and
+  rich flavor.
+</p>
+</div>
 
+<!-- Recipe card for Halo-Halo -->
+<div class="recipe-card" onclick="showRecipeDetails('Halo-Halo')">
+<img src="pics/halo_halo.jpg" alt="Halo-Halo" />
+<h2 class="recipe-title">Halo-Halo</h2>
+<p class="recipe-description">
+  Halo-Halo is a popular Filipino dessert that consists of a mixture of
+  shaved ice and various sweet ingredients like beans, fruits, and
+  gelatin, topped with evaporated milk and ice cream.
+</p>
+</div>
+
+<!-- Recipe card for Biko -->
+<div class="recipe-card" onclick="showRecipeDetails('Biko')">
+<img src="pics/biko.jpg" alt="Biko" />
+<h2 class="recipe-title">Biko</h2>
+<p class="recipe-description">
+  Biko is a Filipino rice cake made from glutinous rice, coconut milk,
+  and brown sugar. It's often served during special occasions and
+  celebrations.
+</p>
+</div>
+
+<!-- Recipe card for Buko Salad -->
+<div class="recipe-card" onclick="showRecipeDetails('Buko Salad')">
+<img src="pics/buko_salad.jpg" alt="Buko Salad" />
+<h2 class="recipe-title">Buko Salad</h2>
+<p class="recipe-description">
+  Buko Salad is a Filipino fruit salad made with young coconut, mixed
+  fruits, cream, and condensed milk. It's a refreshing and sweet dessert
+  commonly served during gatherings.
+</p>
+</div>
+
+<!-- Recipe card for Pinakbet -->
+<div class="recipe-card" onclick="showRecipeDetails('Pinakbet')">
+<img src="pics/pinakbet.jpg" alt="Pinakbet" />
+<h2 class="recipe-title">Pinakbet</h2>
+<p class="recipe-description">
+  Pinakbet is a Filipino vegetable dish made from mixed vegetables such
+  as squash, eggplant, okra, string beans, and bitter melon, sautéed in
+  shrimp paste or fermented fish sauce.
+</p>
+</div>
+
+<!-- Recipe card for Sisig -->
+<div class="recipe-card" onclick="showRecipeDetails('Sisig')">
+<img src="pics/sisig.jpg" alt="Sisig" />
+<h2 class="recipe-title">Sisig</h2>
+<p class="recipe-description">
+  Sisig is a Filipino dish made from parts of pig's head and liver,
+  seasoned with calamansi juice, onions, and chili peppers. It's often
+  served on a sizzling plate and garnished with raw egg.
+</p>
+</div>
+
+<!-- Recipe card for Kutsinta -->
+<div class="recipe-card" onclick="showRecipeDetails('Kutsinta')">
+<img src="pics/kutsinta.jpg" alt="Kutsinta" />
+<h2 class="recipe-title">Kutsinta</h2>
+<p class="recipe-description">
+  Kutsinta is a Filipino steamed rice cake made from rice flour, brown
+  sugar, and lye water. It has a jelly-like texture and is usually
+  served with grated coconut.
+</p>
+</div>
+
+<!-- Recipe card for Cassava Cake -->
+<div class="recipe-card" onclick="showRecipeDetails('Cassava Cake')">
+<img src="pics/cassava_cake.jpg" alt="Cassava Cake" />
+<h2 class="recipe-title">Cassava Cake</h2>
+<p class="recipe-description">
+  Cassava Cake is a traditional Filipino dessert made from grated
+  cassava, coconut milk, eggs, and condensed milk. It's baked until set
+  and topped with a creamy custard layer.
+</p>
+</div>      
+    <!-- Add more recipe cards with images as needed -->
+    <!-- Recipe card for Leche Flan -->
+    <div class="recipe-card">
+      <img src="pics/leche_flan.jpg" alt="Leche Flan" />
+      <h2 class="recipe-title">Leche Flan</h2>
+      <p class="recipe-description">
+        Leche Flan is a traditional Filipino dessert made with eggs, condensed
+        milk, and caramelized sugar. It's known for its smooth texture and
+        rich flavor.
+      </p>
+    </div>
+    <!-- Recipe card for Halo-Halo -->
+    <div class="recipe-card">
+      <img src="pics/halo_halo.jpg" alt="Halo-Halo" />
+      <h2 class="recipe-title">Halo-Halo</h2>
+      <p class="recipe-description">
+        Halo-Halo is a popular Filipino dessert that consists of a mixture of
+        shaved ice and various sweet ingredients like beans, fruits, and
+        gelatin, topped with evaporated milk and ice cream.
+      </p>
+    </div>
+    <!-- Recipe card for Biko -->
+    <div class="recipe-card">
+      <img src="pics/biko.jpg" alt="Biko" />
+      <h2 class="recipe-title">Biko</h2>
+      <p class="recipe-description">
+        Biko is a Filipino rice cake made from glutinous rice, coconut milk,
+        and brown sugar. It's often served during special occasions and
+        celebrations.
+      </p>
+    </div>
+
+    <!-- Recipe card for Buko Salad -->
+    <div class="recipe-card">
+      <img src="pics/buko_salad.jpg" alt="Buko Salad" />
+      <h2 class="recipe-title">Buko Salad</h2>
+      <p class="recipe-description">
+        Buko Salad is a Filipino fruit salad made with young coconut, mixed
+        fruits, cream, and condensed milk. It's a refreshing and sweet dessert
+        commonly served during gatherings.
+      </p>
+    </div>
+    <!-- Recipe card for Pinakbet -->
+    <div class="recipe-card">
+      <img src="pics/pinakbet.jpg" alt="Pinakbet" />
+      <h2 class="recipe-title">Pinakbet</h2>
+      <p class="recipe-description">
+        Pinakbet is a Filipino vegetable dish made from mixed vegetables such
+        as squash, eggplant, okra, string beans, and bitter melon, sautéed in
+        shrimp paste or fermented fish sauce.
+      </p>
+    </div>
+
+    <!-- Recipe card for Sisig -->
+    <div class="recipe-card">
+      <img src="pics/sisig.jpg" alt="Sisig" />
+      <h2 class="recipe-title">Sisig</h2>
+      <p class="recipe-description">
+        Sisig is a Filipino dish made from parts of pig's head and liver,
+        seasoned with calamansi juice, onions, and chili peppers. It's often
+        served on a sizzling plate and garnished with raw egg.
+      </p>
+    </div>
+
+    <!-- Recipe card for Kutsinta -->
+    <div class="recipe-card">
+      <img src="pics/kutsinta.jpg" alt="Kutsinta" />
+      <h2 class="recipe-title">Kutsinta</h2>
+      <p class="recipe-description">
+        Kutsinta is a Filipino steamed rice cake made from rice flour, brown
+        sugar, and lye water. It has a jelly-like texture and is usually
+        served with grated coconut.
+      </p>
+    </div>
     <!-- Pagination -->
     <div class="pagination-container">
       <div class="pagination">
@@ -341,87 +445,67 @@
         <!-- Add more buttons for additional pages -->
       </div>
     </div>
-
-    <!-- Add Recipe Form Popup -->
-<div class="popup-overlay" id="addRecipeFormPopup">
-  <div class="popup-content">
-      <span class="close-btn" onclick="closeAddRecipeForm()">&times;</span>
-      <h2>Add Recipe</h2>
-      <form id="addRecipeForm" onsubmit="submitRecipe(event)">
-          <!-- Form content goes here -->
-
-                <label for="recipeTitle">Title:</label><br>
-                <input type="text" id="recipeTitle" name="recipeTitle"><br><br>
-                <label for="recipeDescription">Description:</label><br>
-                <input type="text" id="recipeDescription" name="recipeDescription"><br><br>
-                <label for="recipeMethod">Method:</label><br>
-                <textarea id="recipeMethod" name="recipeMethod" rows="4" cols="50"></textarea><br><br>
-                <label for="timeToCook">Time to Cook:</label><br>
-                <input type="text" id="timeToCook" name="timeToCook"><br><br>
-                <label for="calories">Calories:</label><br>
-                <input type="text" id="calories" name="calories"><br><br>
-                <label for="fats">Fats:</label><br>
-                <input type="text" id="fats" name="fats"><br><br>
-                <label for="carbs">Carbs:</label><br>
-                <input type="text" id="carbs" name="carbs"><br><br>
-                <label for="protein">Protein:</label><br>
-                <input type="text" id="protein" name="protein"><br><br>
-                <label for="recipeImage">Upload Image:</label><br>
-                <input type="file" id="recipeImage" name="recipeImage" accept="image/*"><br><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
-
+    
+    
     <!-- Recipe Popup -->
     <div class="popup-overlay" id="recipePopup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <div class="recipe-details">
-                <div class="recipe-image">
-                    <img id="popupRecipeImage" alt="Recipe Image">
-                </div>
-                <div class="recipe-description">
-                    <h2 id="popupRecipeTitle"></h2>
-                    <p id="popupRecipeDescription"></p>
-                    <div class="recipe-info">
-                        <h2>Ingredients</h2>
-                        <ul id="popupIngredientsList">
-                            <!-- Ingredients will be dynamically populated here -->
-                        </ul>
-                        <h2>Method</h2>
-                        <ol id="popupMethodSteps">
-                            <!-- Method steps will be dynamically populated here -->
-                        </ol>
-                        <h2>Time to Cook</h2>
-                        <p id="popupTimeToCook"></p>
-                        <h2>Nutritional Value</h2>
-                        <p id="popupNutritionalValue"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <div class="recipe-details">
+              <div class="recipe-image">
+                  <img id="popupRecipeImage" alt="Recipe Image">
+              </div>
+              <div class="recipe-description">
+                  <h2 id="popupRecipeTitle"></h2>
+                  <p id="popupRecipeDescription"></p>
+                  <div class="recipe-info">
+                      <h2>Ingredients</h2>
+                      <ul id="popupIngredientsList">
+                          <!-- Ingredients will be dynamically populated here -->
+                      </ul>
+                      <h2>Method</h2>
+                      <ol id="popupMethodSteps">
+                          <!-- Method steps will be dynamically populated here -->
+                      </ol>
+                      <h2>Time to Cook</h2>
+                      <p id="popupTimeToCook"></p>
+                      <h2>Nutritional Value</h2>
+                      <p id="popupNutritionalValue"></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
 
     <script src="script.js"></script>
     <script>
-        function searchRecipe(event) {
-            event.preventDefault(); // Prevent the form from submitting
-            const searchQuery = document.getElementById('searchQuery').value.toLowerCase();
-            const recipeCards = document.querySelectorAll('.recipe-card');
-            
-            recipeCards.forEach(card => {
-                const title = card.querySelector('.recipe-title').textContent.toLowerCase();
-                const description = card.querySelector('.recipe-description').textContent.toLowerCase();
-                
-                if (title.includes(searchQuery) || description.includes(searchQuery)) {
-                    card.style.display = 'block'; // Show the card if it matches the search query
-                } else {
-                    card.style.display = 'none'; // Hide the card if it doesn't match the search query
-                }
-            });
-        }
+      function searchRecipe(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        const searchQuery = document
+          .getElementById("searchQuery")
+          .value.toLowerCase();
+        const recipeCards = document.querySelectorAll(".recipe-card");
 
+        recipeCards.forEach((card) => {
+          const title = card
+            .querySelector(".recipe-title")
+            .textContent.toLowerCase();
+          const description = card
+            .querySelector(".recipe-description")
+            .textContent.toLowerCase();
+
+          if (
+            title.includes(searchQuery) ||
+            description.includes(searchQuery)
+          ) {
+            card.style.display = "block"; // Show the card if it matches the search query
+          } else {
+            card.style.display = "none"; // Hide the card if it doesn't match the search query
+          }
+        });
+      }
+      
         // Function to show recipe details popup
         function showRecipeDetails(recipeTitle) {
             const recipeData = getRecipeData(recipeTitle);
@@ -474,27 +558,8 @@
             popup.style.display = 'none';
         }
 
-        // Function to show add recipe form popup
-        function showAddRecipeForm() {
-            const addRecipeFormPopup = document.getElementById('addRecipeFormPopup');
-            addRecipeFormPopup.style.display = 'block';
-        }
-
-        // Function to close add recipe form popup
-        function closeAddRecipeForm() {
-            const addRecipeFormPopup = document.getElementById('addRecipeFormPopup');
-            addRecipeFormPopup.style.display = 'none';
-        }
-
-        // Function to handle adding a new recipe
-        function submitRecipe(event) {
-            event.preventDefault(); // Prevent the form from submitting
-            // Add your logic to handle adding a new recipe here
-            alert("Functionality to add a new recipe will be implemented here.");
-        }
-
-        // Dummy function to get recipe data (replace with actual data retrieval logic)
-        function getRecipeData(recipeTitle) {
+            // Dummy function to get recipe data (replace with actual data retrieval logic)
+            function getRecipeData(recipeTitle) {
             const recipes = {
                 "Sinigang": {
                     title: "Sinigang",
@@ -598,14 +663,13 @@
         }
 
     </script>
-        </script>
-        <script
-          type="module"
-          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-        ></script>
-        <script
-          nomodule
-          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-        ></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
