@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Pnoy Dishcovery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content {
+            padding: 20px; /* Add padding around the content */
+        }
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            cursor: pointer; /* Add cursor pointer for clickable behavior */
+        }
+        .user-details {
+            font-size: 1.2rem;
+        }
+        .user-details h2 {
+            margin-bottom: 10px;
+        }
+        .user-details p {
+            color: #666; /* Adjust color for secondary text */
+        }
+        .saved-recipes,
+        .shopping-list {
+            margin-top: 40px; /* Add space between sections */
+        }
+        .saved-recipes h2,
+        .shopping-list h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .saved-recipes ul,
+        .shopping-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .saved-recipes ul li,
+        .shopping-list ul li {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .saved-recipes ul li a,
+        .shopping-list ul li {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .saved-recipes ul li a:hover {
+            color: #666; /* Adjust hover color */
+        }
+        /* Hide input[type="file"] element */
+        #avatar-upload {
+            display: none;
+        }
+        /* Smaller font size for the User Profile heading */
+        .content h1 {
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+          <img src="pics/logo.png" class="logo" alt="Pnoy Dishcovery Logo" />
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipe.html">Recipes</a></li>
+            <li><a href="about.html">About</a></li>
+
+          </ul>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <!-- Use label to trigger file input -->
+            <label for="avatar-upload">
+                <img src="pics/user-avatar.jpg" class="avatar" id="avatar" alt="User Avatar">
+            </label>
+            <!-- Hidden file input element -->
+            <input type="file" id="avatar-upload" onchange="handleAvatarUpload(this)" accept="image/*">
+            <div class="user-details">
+                <h2>John Doe</h2>
+                <p>Email: john@example.com</p>
+                <p>Joined: January 1, 2024</p>
+            </div>
+        </div>
+        <div class="sign-out">
+            <button id="sign-out-btn" onclick="signOut()">Sign Out</button>
+        </div>
+        <div class="saved-recipes">
+            <h2>Saved Recipes</h2>
+            <ul>
+                <li><a href="recipe-detail.html">Adobo</a></li>
+                <li><a href="recipe-detail.html">Sinigang</a></li>
+                <!-- List other saved recipes here -->
+            </ul>
+        </div>
+        <div class="shopping-list">
+            <h2>Shopping List</h2>
+            <ul>
+                <li>Pork</li>
+                <li>Vegetables</li>
+                <!-- List other items in the shopping list here -->
+            </ul>
+        </div>
+    </div>    
+
+    <script>
+        // Function to sign out and redirect to home page
+        function signOut() {
+            // Redirect to home page (index.html)
+            window.location.href = "index.html";
+        }
+
+        // Function to handle avatar upload
+        function handleAvatarUpload(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    document.getElementById('avatar').src = e.target.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
