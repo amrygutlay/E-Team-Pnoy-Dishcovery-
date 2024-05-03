@@ -433,3 +433,68 @@ button:hover,
     text-align: left;
     position: relative;
 }
+.content {
+    padding: 20px;
+    padding-top: 80px; /* Increased padding to avoid overlap with navigation bar */
+}
+/* Additional CSS for refined format */
+.content {
+    padding: 20px;
+    padding-top: 80px; /* Adjusted padding to avoid overlap */
+    text-align: center; /* Align all content in the center */
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items in the center horizontally */
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-details {
+    font-size: 1rem; /* Reduced font size for user details */
+    text-align: left; /* Align user details text to the left */
+}
+
+.saved-recipes,
+.shopping-list {
+    display: inline-block;
+    vertical-align: top; /* Ensure alignment */
+    margin: 0 10px; /* Add space between sections */
+}
+
+.saved-recipes h2,
+.shopping-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.saved-recipes ul li,
+.shopping-list ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.saved-recipes ul li a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.saved-recipes ul li a:hover {
+    color: #666;
+}
+/* Additional CSS for sign-out button */
+.sign-out {
+    text-align: center;
+    margin-bottom: 20px; /* Add space between sign-out button and sections */
+}
+.sign-out button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
